@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
@@ -12,15 +11,33 @@ public class PlayerBehaviour : MonoBehaviour
     public bool isAlive = true;
 
     private Animator animator;
+    private bool playStep = false;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        StartCoroutine(PlayStepSounds());
     }
 
     private void Update()
     {
         HandleMovement();
+        if (Input.GetButton("Fire1"))
+        {
+            animator.SetTrigger("Attack");
+        }
+    }
+
+    private IEnumerator PlayStepSounds()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(.2f);
+            if (playStep)
+            {
+                StepAudioSource.PlayOneShot(StepSound);
+            }
+        }
     }
 
     private void HandleMovement()
@@ -29,6 +46,7 @@ public class PlayerBehaviour : MonoBehaviour
         var vertical = Input.GetAxis("Vertical");
         if (horizontal == 0 && vertical == 0)
         {
+            playStep = false;
             return;
         }
         Vector3 direction = new Vector3(horizontal, vertical, 0);
@@ -36,32 +54,32 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (horizontal > 0)
             {
-                animator.SetTrigger("walkRight");
+                animator.SetTrigger("WalkRight");
             }
             else
             {
-                animator.SetTrigger("walkLeft");
+                animator.SetTrigger("WalkLeft");
             }
         }
         else
         {
             if (vertical > 0)
             {
-                animator.SetTrigger("walkUp");
+                animator.SetTrigger("WalkUp");
             }
             else
             {
-                animator.SetTrigger("walkDown");
+                animator.SetTrigger("WalkDown");
             }
         }
 
         transform.position += direction * speed;
-        StepAudioSource.PlayOneShot(StepSound);
+        playStep = true;
     }
 
     public void Die()
     {
         isAlive = false;
-        animator.SetTrigger("die");
+        animator.SetTrigger("Die");
     }
 }
