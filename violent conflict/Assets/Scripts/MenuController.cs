@@ -10,13 +10,17 @@ public class MenuController : MonoBehaviour {
     public Color selectedColor;
     public Color unselectedColor;
     public Color deadColor;
+    public AudioClip choosing;
+    public AudioClip selected;
 
+    private AudioSource audioSource;
     private int currentCharacter;
     private GameState gameState;
 
     void Start ()
     { 
         gameState = GameState.Instance;
+        audioSource = GetComponent<AudioSource>();
         currentCharacter = 0;
         for (int i = 0; i < charactersSpriteRenderer.Length; i++)
         {            
@@ -36,7 +40,8 @@ public class MenuController : MonoBehaviour {
             SetCharIndex(1);            
         }
 
-        SelectCurrentCharacter();        
+        SelectCurrentCharacter();
+        audioSource.PlayOneShot(choosing);
     }
 	
 	void Update ()
@@ -49,10 +54,11 @@ public class MenuController : MonoBehaviour {
         {
             SetCharProperties(-1);
         }
-        else if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        else if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetButtonDown("Fire1"))
         {
             gameState.SetCurrentSelectedCharacter(currentCharacter);
             SceneManager.LoadSceneAsync("Level" + gameState.currentLevel);
+            audioSource.PlayOneShot(selected);
         }
     }
 
@@ -60,7 +66,8 @@ public class MenuController : MonoBehaviour {
     {
         UnselectCurrentCharacter();
         SetCharIndex(addNumber);
-        SelectCurrentCharacter();        
+        SelectCurrentCharacter();
+        audioSource.PlayOneShot(choosing);
     }
 
     void SelectCurrentCharacter()    {
