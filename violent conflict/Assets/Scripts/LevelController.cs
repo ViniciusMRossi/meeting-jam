@@ -10,6 +10,7 @@ public class LevelController : MonoBehaviour {
     public Transform[] enemySpawnPoints;
     public Transform spawnPoint;
     public Transform winPoint;
+    public int currentLevel;
 
     private GameState gameState;
     private GameObject currentCharacter;
@@ -29,6 +30,7 @@ public class LevelController : MonoBehaviour {
 	void Update () {
 		if(Vector3.Distance(currentCharacter.transform.position, winPoint.position) < 1f)
         {
+            gameState.currentLevel = currentLevel + 1;
             SceneManager.LoadSceneAsync("PlayerSelect");
         }
 	}

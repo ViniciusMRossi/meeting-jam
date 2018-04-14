@@ -28361,7 +28361,7 @@ MonoBehaviour:
   - {fileID: 1744124702}
   spawnPoint: {fileID: 1258501976}
   winPoint: {fileID: 318128412}
-  canvas: {fileID: 0}
+  currentLevel: 3
 --- !u!4 &1883100914
 Transform:
   m_ObjectHideFlags: 0

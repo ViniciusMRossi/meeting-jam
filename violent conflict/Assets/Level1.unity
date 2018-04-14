@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5510,6 +5510,7 @@ MonoBehaviour:
   - {fileID: 1744124702}
   spawnPoint: {fileID: 1258501976}
   winPoint: {fileID: 318128412}
+  currentLevel: 1
 --- !u!4 &1883100914
 Transform:
   m_ObjectHideFlags: 0
