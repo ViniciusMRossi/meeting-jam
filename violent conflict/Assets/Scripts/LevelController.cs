@@ -47,7 +47,12 @@ public class LevelController : MonoBehaviour {
                 SceneManager.LoadSceneAsync("PlayerSelect");
             } else
             {
-                SceneManager.LoadSceneAsync("GameOver");
+				if (currentCharacter.GetComponent<PlayerBehaviour>().charType == 2) {
+					SceneManager.LoadSceneAsync ("Finish");
+				} else {
+					SceneManager.LoadSceneAsync("GameOverEx");
+				}
+                
             }
         }
 	}
