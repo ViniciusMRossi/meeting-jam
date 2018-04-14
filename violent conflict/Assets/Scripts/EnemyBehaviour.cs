@@ -15,13 +15,13 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void Die()
     {
         isAlive = false;
-        animator.SetTrigger("die");
+        animator.SetTrigger("Die");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -46,7 +46,29 @@ public class EnemyBehaviour : MonoBehaviour
     {
         while (Vector3.Distance(target.position, transform.position) > 0)
         {
-            transform.LookAt(target);
+            Vector3 direction = target.position - transform.position;
+            if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            {
+                if (direction.x > 0)
+                {
+                    animator.SetTrigger("WalkRight");
+                }
+                else
+                {
+                    animator.SetTrigger("WalkLeft");
+                }
+            }
+            else
+            {
+                if (direction.y > 0)
+                {
+                    animator.SetTrigger("WalkUp");
+                }
+                else
+                {
+                    animator.SetTrigger("WalkDown");
+                }
+            }
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
             yield return null;
         }
