@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehaviour : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioSource VoiceAudioSource;
     public float speed = 1.0f;
 	public Animator animator;
+	public int charType;
 
     public bool isAlive = true;
 
@@ -50,8 +52,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
 		if (!isAlive)
 			return;
-
-		Debug.Log ("HandleMovement()");
 		
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
@@ -90,7 +90,6 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Die()
     {
-		Debug.Log ("DIE");
         isAlive = false;
 		animator.SetBool ("Die", true);
         VoiceAudioSource.PlayOneShot(DeathSound);
@@ -99,6 +98,8 @@ public class PlayerBehaviour : MonoBehaviour
         foreach(var enemy in enemies) {
             enemy.OnPlayerDead();
         }
-		Debug.Log ("DIE - fim");
+
+		GameState.Instance.SetCharacterDead (charType);
+		SceneManager.LoadSceneAsync ("GameOver");
     }
 }
