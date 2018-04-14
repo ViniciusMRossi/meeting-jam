@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Override
+  m_Controller: {fileID: 9100000, guid: 6a220262fa8374bf3a8983858438e5fa, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 46cff62c4289d4b5aa134bc72248700b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5c2153acf94994b1abbae436077ed7dc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8f1c178272fe147dd88b566e32434a7d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5c2153acf94994b1abbae436077ed7dc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0498934c1f8c8470a88518ae64ecf2da, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5c2153acf94994b1abbae436077ed7dc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 762faba7a94824f3dad7f6028ea75ef3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5c2153acf94994b1abbae436077ed7dc, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 45580b698551d45e1a98011834d8d967, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b183b6c1a7a49487eb63c0d981e096b7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e6ee574a4661b4d88ad7a27e10b11cdf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d5f9b862959c1491796479fed6284076, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 659f0eb01ae524fd4814664d4b434672, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a2eaea9b78a3a4e50bdaba6b9c4e3dd7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3766024e2fdd24347a1a3d4b1d19095e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5cc3be1a3c0fd45908e84772c8ff619d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ee0f9ad1f8a8340d8a729cf30ec44b3a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 406bedd4f4c374cc9b212c8faf44fac7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3deb075538e14474ea1d8da4957ce314, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ea2f8adfe9f9e49deaf5f6b7d1190d61, type: 2}

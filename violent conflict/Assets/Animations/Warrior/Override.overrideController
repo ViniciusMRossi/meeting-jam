@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Override
+  m_Controller: {fileID: 9100000, guid: 6a220262fa8374bf3a8983858438e5fa, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 46cff62c4289d4b5aa134bc72248700b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3c3e243c27f3549f8aff86815806887e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8f1c178272fe147dd88b566e32434a7d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a59c8ca19d8c04d3a8056c9a7bdb699f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0498934c1f8c8470a88518ae64ecf2da, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9d1cc424142db4d5f96508fbc978d432, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 762faba7a94824f3dad7f6028ea75ef3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f86b4eaee85374fc6a10b0cfda823e97, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 45580b698551d45e1a98011834d8d967, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4318dc75696f84cec99b64968f520ca8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e6ee574a4661b4d88ad7a27e10b11cdf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2165c4da954a24814bb24d3c07e5fda1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 659f0eb01ae524fd4814664d4b434672, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 89e5b871419de41e9a35b0bcdf5e33d3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3766024e2fdd24347a1a3d4b1d19095e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6995c4c8ba1c243d4b4f37516b942acf, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ee0f9ad1f8a8340d8a729cf30ec44b3a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b350aa57089384736a4598ba9c6a099d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3deb075538e14474ea1d8da4957ce314, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4e7c43a3bb9f345b391f0b01cd96ae96, type: 2}

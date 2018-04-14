@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelController : MonoBehaviour {
 
     public GameObject[] characters;
+    public Transform spawnPoint;
 
     private GameState gameState;
     private GameObject currentCharacter;
@@ -12,7 +13,7 @@ public class LevelController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         gameState = GameState.Instance;
-        currentCharacter = Instantiate(characters[gameState.GetCurrentSelectedCharacter()]);
+        currentCharacter = Instantiate(characters[gameState.GetCurrentSelectedCharacter()], spawnPoint.position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
