@@ -90,5 +90,9 @@ public class PlayerBehaviour : MonoBehaviour
         animator.SetTrigger("Die");
         VoiceAudioSource.PlayOneShot(DeathSound);
         StopAllCoroutines();
+        var enemies = FindObjectsOfType<EnemyBehaviour>();
+        foreach(var enemy in enemies) {
+            enemy.OnPlayerDead();
+        }
     }
 }

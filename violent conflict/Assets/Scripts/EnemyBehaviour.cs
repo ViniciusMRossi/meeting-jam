@@ -41,7 +41,6 @@ public class EnemyBehaviour : MonoBehaviour
         if (coll.gameObject.tag == "Player")
         {
             coll.gameObject.GetComponentInChildren<PlayerBehaviour>().Die();
-            StopAllCoroutines();
             VoiceAudioSource.PlayOneShot(HitSound);
         }
 
@@ -86,5 +85,10 @@ public class EnemyBehaviour : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
             yield return null;
         }
+    }
+
+    internal void OnPlayerDead()
+    {
+        StopAllCoroutines();
     }
 }
