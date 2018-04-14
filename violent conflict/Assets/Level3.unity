@@ -28446,9 +28446,9 @@ MonoBehaviour:
   - {fileID: 396284630}
   - {fileID: 359623527}
   - {fileID: 1744124702}
-  - {fileID: 1744124702}
-  - {fileID: 1744124702}
-  - {fileID: 1744124702}
+  - {fileID: 790299165}
+  - {fileID: 1815252340}
+  - {fileID: 70524489}
   spawnPoint: {fileID: 1258501976}
   winPoint: {fileID: 318128412}
   currentLevel: 3
