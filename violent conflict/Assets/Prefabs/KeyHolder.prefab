@@ -44,7 +44,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1596927517731438
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StepSound: {fileID: 8300000, guid: 7f55439e494cde444b227805422c9519, type: 3}
+  AttackSound: {fileID: 0}
+  DeathSound: {fileID: 0}
   StepAudioSource: {fileID: 82875070593685904}
   VoiceAudioSource: {fileID: 82350876492943252}
   speed: 0.05
