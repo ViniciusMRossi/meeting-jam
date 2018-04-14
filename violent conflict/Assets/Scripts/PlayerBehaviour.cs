@@ -37,8 +37,6 @@ public class PlayerBehaviour : MonoBehaviour
 
 			RaycastHit2D hit;
 			if (hit = Physics2D.CircleCast (transform.position, 0.2f, Vector2.right, 0.2f, layerMask)) {
-
-				Debug.Log (hit.transform.name);
 				if (hit.transform.name.Contains ("Orc") || hit.transform.name.Contains ("Skeleton")
 					|| hit.transform.name.Contains ("EnemyMage") || hit.transform.name.Contains ("EnemyWarrior")) {
 					hit.transform.GetComponent<EnemyBehaviour> ().Die ();
