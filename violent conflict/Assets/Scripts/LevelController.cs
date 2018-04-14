@@ -10,7 +10,6 @@ public class LevelController : MonoBehaviour {
     public Transform[] enemySpawnPoints;
     public Transform spawnPoint;
     public Transform winPoint;
-    public Canvas canvas;
 
     private GameState gameState;
     private GameObject currentCharacter;

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4267383779935040}
   - component: {fileID: 82219027448560684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StepAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 58634898978091426}
   - component: {fileID: 58962413718880416}
   - component: {fileID: 114054312108869534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4483614961749918}
   - component: {fileID: 82552044942441400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4881643861394162}
   - component: {fileID: 212204278708137128}
   - component: {fileID: 95370509399094700}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300156, guid: fdd1f0f7b019f4645be3a3d79666457a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

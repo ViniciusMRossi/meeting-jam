@@ -90,16 +90,25 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Die()
     {
+        
         isAlive = false;
-		animator.SetBool ("Die", true);
+        animator.SetBool("Die", true);
         VoiceAudioSource.PlayOneShot(DeathSound);
         StopAllCoroutines();
         var enemies = FindObjectsOfType<EnemyBehaviour>();
-        foreach(var enemy in enemies) {
+        StartCoroutine(DieCoroutine());
+        foreach (var enemy in enemies)
+        {
             enemy.OnPlayerDead();
         }
 
-		GameState.Instance.SetCharacterDead (charType);
-		SceneManager.LoadSceneAsync ("GameOver");
+        GameState.Instance.SetCharacterDead(charType);
+    }
+
+    private IEnumerator DieCoroutine()
+    {        
+        yield return new WaitForSeconds(1f);
+        
+        SceneManager.LoadSceneAsync("GameOver");
     }
 }

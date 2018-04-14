@@ -29,6 +29,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (other.tag == "Player")
         {
             animator = GetComponentInChildren<Animator>();
+            StopAllCoroutines();
             StartCoroutine(FollowPlayer(other.transform));
             StartCoroutine(PlayStepSounds());
             VoiceAudioSource.PlayOneShot(ChaseSound);
@@ -82,7 +83,7 @@ public class EnemyBehaviour : MonoBehaviour
                 }
             }
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed);
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
     }
 

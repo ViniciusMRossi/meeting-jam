@@ -51,4 +51,9 @@
     {
         currentPoints += points;
     }
+
+    public void ResetGameState()
+    {
+        instance = null;
+    }
 }

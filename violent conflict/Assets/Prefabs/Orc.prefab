@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4640772274353238}
   - component: {fileID: 82563900084045652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StepAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4660601351095862}
   - component: {fileID: 212684172676261680}
   - component: {fileID: 95607236787445588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4490607605500984}
   - component: {fileID: 82653341832061846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MainAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 114365963960778764}
   - component: {fileID: 58809450687005188}
   - component: {fileID: 50484157412185618}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orc
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300156, guid: cac4da0a7cceb4739b260c9eb9d7e184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
