@@ -33,3 +33,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+violent conflict/Assets/Ignore/
+violent conflict/Assets/Ignore.meta
