@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public AudioClip StepSound;
-    public AudioClip HitSound;
+	public AudioClip HitSound;
+	public AudioClip EnemyHitSound;
     public AudioClip ChaseSound;
     public AudioSource StepAudioSource;
     public AudioSource VoiceAudioSource;
@@ -20,8 +21,16 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Die()
     {
+		Debug.Log ("Die mothafucka");
         isAlive = false;
-        animator.SetTrigger("Die");
+		animator.SetBool("Die", true);
+		StopAllCoroutines ();
+		var coliders = GetComponentsInChildren<BoxCollider2D> ();
+		VoiceAudioSource.PlayOneShot(EnemyHitSound);
+
+		foreach (var colider in coliders) {
+			colider.enabled = false;
+		}
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,6 +52,11 @@ public class EnemyBehaviour : MonoBehaviour
             coll.gameObject.GetComponentInChildren<PlayerBehaviour>().Die();
             VoiceAudioSource.PlayOneShot(HitSound);
         }
+
+		if (coll.gameObject.tag == "Attack")
+		{
+			Die ();
+		}
 
     }
 

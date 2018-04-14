@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4267383779935040}
   - component: {fileID: 82219027448560684}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: StepAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114054312108869534}
   m_Layer: 8
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4483614961749918}
   - component: {fileID: 82552044942441400}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: MainAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,9 +72,10 @@ GameObject:
   - component: {fileID: 4881643861394162}
   - component: {fileID: 212204278708137128}
   - component: {fileID: 95370509399094700}
-  m_Layer: 8
+  - component: {fileID: 58539412994475652}
+  m_Layer: 9
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Attackable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +155,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58539412994475652
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742242192936404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32000002
 --- !u!58 &58634898978091426
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -374,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StepSound: {fileID: 8300000, guid: 20892e209dcdb194aac1c8fdce36444c, type: 3}
   HitSound: {fileID: 8300000, guid: 2a1e95d5f5608f74c90f9e153c32df21, type: 3}
+  EnemyHitSound: {fileID: 0}
   ChaseSound: {fileID: 8300000, guid: 631a124ca212329438f3d933e84c76cc, type: 3}
   StepAudioSource: {fileID: 82219027448560684}
   VoiceAudioSource: {fileID: 82552044942441400}

@@ -12,6 +12,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float speed = 1.0f;
 	public Animator animator;
 	public int charType;
+	public LayerMask layerMask;
 
     public bool isAlive = true;
 
@@ -29,11 +30,21 @@ public class PlayerBehaviour : MonoBehaviour
             return;
         }
         HandleMovement();
-        if (Input.GetButton("Fire1"))
-        {
-            animator.SetTrigger("Attack");
-            VoiceAudioSource.PlayOneShot(AttackSound);
-        }
+		if (Input.GetButton ("Fire1")) {
+			animator.SetTrigger ("Attack");
+			VoiceAudioSource.PlayOneShot (AttackSound);
+
+
+			RaycastHit2D hit;
+			if (hit = Physics2D.CircleCast (transform.position, 0.2f, Vector2.right, 0.2f, layerMask)) {
+
+				Debug.Log (hit.transform.name);
+				if (hit.transform.name.Contains ("Orc") || hit.transform.name.Contains ("Skeleton")) {
+					hit.transform.GetComponent<EnemyBehaviour> ().Die ();
+				}
+
+			}
+		}
     }
 
     private IEnumerator PlayStepSounds()

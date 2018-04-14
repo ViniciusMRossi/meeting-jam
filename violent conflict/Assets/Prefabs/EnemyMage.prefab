@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212373849199289902}
   - component: {fileID: 95009136795686538}
   - component: {fileID: 61685902158477652}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 212279353230368940}
   - component: {fileID: 95668879012975958}
   - component: {fileID: 61946575301707810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4942556071804288}
   - component: {fileID: 82358923005975822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MainAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 212522550485153250}
   - component: {fileID: 95614394448261736}
   - component: {fileID: 61535140721940298}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 212148213347125398}
   - component: {fileID: 95285073662844822}
   - component: {fileID: 61670967047356750}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4313727612587576}
   - component: {fileID: 82106998179368952}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StepAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 212187790873475726}
   - component: {fileID: 95438865304918084}
   - component: {fileID: 61318782512961922}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,8 @@ GameObject:
   - component: {fileID: 4772322221307198}
   - component: {fileID: 212909881225612166}
   - component: {fileID: 95873942702718548}
-  m_Layer: 0
+  - component: {fileID: 58934973815269492}
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +182,7 @@ GameObject:
   - component: {fileID: 212330435925413740}
   - component: {fileID: 95124249175266376}
   - component: {fileID: 61162447950490318}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +197,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4972872112035112}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +215,7 @@ GameObject:
   - component: {fileID: 212345480858945214}
   - component: {fileID: 95092824636632520}
   - component: {fileID: 61304395551550392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +233,7 @@ GameObject:
   - component: {fileID: 212894440849901954}
   - component: {fileID: 95417359678844394}
   - component: {fileID: 61971016880563652}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thunder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,6 +471,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!58 &58934973815269492
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519169204502450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.32000002
 --- !u!61 &61162447950490318
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -996,6 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StepSound: {fileID: 8300000, guid: 20892e209dcdb194aac1c8fdce36444c, type: 3}
   HitSound: {fileID: 8300000, guid: 2a1e95d5f5608f74c90f9e153c32df21, type: 3}
+  EnemyHitSound: {fileID: 0}
   ChaseSound: {fileID: 8300000, guid: 4e3c5cd8651a5b142b864143278ba991, type: 3}
   StepAudioSource: {fileID: 82563900084045652, guid: 8d7a961c28f1f4bd28e835711951be0e,
     type: 2}
