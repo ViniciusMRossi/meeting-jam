@@ -9,15 +9,14 @@ public class PlayerBehaviour : MonoBehaviour
     public AudioSource StepAudioSource;
     public AudioSource VoiceAudioSource;
     public float speed = 1.0f;
+	public Animator animator;
 
     public bool isAlive = true;
 
-    private Animator animator;
     private bool playStep = false;
 
     private void Start()
     {
-        animator = GetComponentInChildren<Animator>();
         StartCoroutine(PlayStepSounds());
     }
 
@@ -49,6 +48,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void HandleMovement()
     {
+		if (!isAlive)
+			return;
+
+		Debug.Log ("HandleMovement()");
+		
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
         if (horizontal == 0 && vertical == 0)
@@ -86,13 +90,15 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Die()
     {
+		Debug.Log ("DIE");
         isAlive = false;
-        animator.SetTrigger("Die");
+		animator.SetBool ("Die", true);
         VoiceAudioSource.PlayOneShot(DeathSound);
         StopAllCoroutines();
         var enemies = FindObjectsOfType<EnemyBehaviour>();
         foreach(var enemy in enemies) {
             enemy.OnPlayerDead();
         }
+		Debug.Log ("DIE - fim");
     }
 }
