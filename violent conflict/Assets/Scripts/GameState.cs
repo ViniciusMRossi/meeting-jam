@@ -1,7 +1,7 @@
 ﻿public class GameState {
 
     private static GameState instance;
-    private bool[] deadCharacters = { false, false, false, true };
+    private bool[] deadCharacters = { false, true, false, true };
     private int currentPoints;      
     private int currentSelectedCharacter;
 

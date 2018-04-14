@@ -11,29 +11,33 @@ public class MenuController : MonoBehaviour {
     public Color unselectedColor;
     public Color deadColor;
 
-    private int currentCharacter = 0;
+    private int currentCharacter;
     private GameState gameState;
 
     void Start ()
     { 
         gameState = GameState.Instance;
-
-        if (gameState.IsCharacterDead(currentCharacter))
-        {
-            SetCharIndex(1);
-        }
-
-        SelectCurrentCharacter();
-
-        for(int i = 0; i < charactersSpriteRenderer.Length; i++)
-        {
+        currentCharacter = 0;
+        for (int i = 0; i < charactersSpriteRenderer.Length; i++)
+        {            
             if (gameState.IsCharacterDead(i))
             {
                 charactersSpriteRenderer[i].color = deadColor;
-                charactersAnimator[i].SetBool("Death", true);
+                charactersAnimator[i].SetBool("Die", true);
+            }
+            else
+            {
+                charactersAnimator[i].SetBool("SelectionOff", true);
             }
         }
-	}
+
+        if (gameState.IsCharacterDead(currentCharacter))
+        {
+            SetCharIndex(1);            
+        }
+
+        SelectCurrentCharacter();        
+    }
 	
 	void Update ()
     {
@@ -59,10 +63,10 @@ public class MenuController : MonoBehaviour {
         SelectCurrentCharacter();        
     }
 
-    void SelectCurrentCharacter()
-    {
+    void SelectCurrentCharacter()    {
+        
         charactersSpriteRenderer[currentCharacter].color = selectedColor;
-        charactersAnimator[currentCharacter].GetComponent<Animator>().SetBool("WalkDown", true);
+        charactersAnimator[currentCharacter].SetBool("WalkDown", true);
     }
 
     void UnselectCurrentCharacter()
