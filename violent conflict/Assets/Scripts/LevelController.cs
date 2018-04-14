@@ -22,7 +22,7 @@ public class LevelController : MonoBehaviour {
         for(int i = 0; i < enemySpawnPoints.Length; i++)
         {
             int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-            //Instantiate(enemyPrefabs[enemyIndex], enemySpawnPoints[i].position, Quaternion.identity);
+            Instantiate(enemyPrefabs[enemyIndex], enemySpawnPoints[i].position, Quaternion.identity);
         }
 	}
 	
