@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour {
 
-    public SpriteRenderer[] characters;    
-
+    public SpriteRenderer[] characters;  
     public Color selectedColor;
     public Color unselectedColor;
+    public Color deadColor;
 
     private int currentCharacter;
+    private GameState gameState;
 
     void Start () {
-        currentCharacter = 0;
+        gameState = GameState.Instance;
+        for(int i = 0; i < characters.Length; i++)
+        {
+            if (gameState.isCharacterDead(i))
+            {
+                characters[i].color = deadColor;
+            }
+        }
 	}
 	
 	void Update () {
@@ -21,11 +30,17 @@ public class MenuController : MonoBehaviour {
             characters[currentCharacter].color = unselectedColor;
             setNextCharIndex();
             characters[currentCharacter].color = selectedColor;
-        }else if (Input.GetKeyDown(KeyCode.LeftArrow))
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             characters[currentCharacter].color = unselectedColor;
             setPrevCharIndex();
             characters[currentCharacter].color = selectedColor;
+        }
+        else if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            gameState.setCurrentSelectedCharacter(currentCharacter);
+            SceneManager.LoadSceneAsync("Level1");
         }
     }
 
@@ -35,6 +50,9 @@ public class MenuController : MonoBehaviour {
             currentCharacter = 0;
         else
             ++currentCharacter;
+
+        if (gameState.isCharacterDead(currentCharacter))
+            setNextCharIndex();
     }
 
     void setPrevCharIndex()
@@ -43,5 +61,8 @@ public class MenuController : MonoBehaviour {
             currentCharacter = 2;
         else
             --currentCharacter;
+
+        if (gameState.isCharacterDead(currentCharacter))
+            setPrevCharIndex();
     }
 }
