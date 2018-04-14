@@ -10,14 +10,12 @@ public class EnemyBehaviour : MonoBehaviour
     public AudioSource StepAudioSource;
     public AudioSource VoiceAudioSource;
     public float speed = 1.0f;
+	public Animator animator;
 
     public bool isAlive = true;
 
-    private Animator animator;
-
     private void Start()
     {
-        animator = GetComponentInChildren<Animator>();
     }
 
     public void Die()

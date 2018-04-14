@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Splash.unity
     guid: 01f86bd0310fd3b428818f6cd52e3a35
+  - enabled: 1
+    path: Assets/GameOver.unity
+    guid: 82081e1c2d8904ceaa0aec9f27b4bf9c

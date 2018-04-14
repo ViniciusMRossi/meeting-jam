@@ -378,6 +378,7 @@ MonoBehaviour:
   StepAudioSource: {fileID: 82219027448560684}
   VoiceAudioSource: {fileID: 82552044942441400}
   speed: 0.02
+  animator: {fileID: 95370509399094700}
   isAlive: 1
 --- !u!212 &212204278708137128
 SpriteRenderer:
