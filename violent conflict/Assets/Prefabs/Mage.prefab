@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StepSound: {fileID: 8300000, guid: 7f55439e494cde444b227805422c9519, type: 3}
-  AttackSound: {fileID: 0}
+  AttackSound: {fileID: 8300000, guid: 8b09544ce067bcc488633d592057b6c8, type: 3}
   DeathSound: {fileID: 8300000, guid: 7547576145ad7dd45a29b54d3ef46bd6, type: 3}
   StepAudioSource: {fileID: 82106998179368952}
   VoiceAudioSource: {fileID: 82358923005975822}
