@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public AudioClip StepSound;
+    public AudioClip HitSound;
+    public AudioClip ChaseSound;
     public AudioSource StepAudioSource;
     public AudioSource VoiceAudioSource;
     public float speed = 1.0f;
@@ -30,7 +32,19 @@ public class EnemyBehaviour : MonoBehaviour
         {
             StartCoroutine(FollowPlayer(other.transform));
             StartCoroutine(PlayStepSounds());
+            VoiceAudioSource.PlayOneShot(ChaseSound);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            coll.gameObject.GetComponentInChildren<PlayerBehaviour>().Die();
+            StopAllCoroutines();
+            VoiceAudioSource.PlayOneShot(HitSound);
+        }
+
     }
 
     private IEnumerator PlayStepSounds()
