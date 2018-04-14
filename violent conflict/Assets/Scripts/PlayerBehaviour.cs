@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     public AudioClip StepSound;
+    public AudioClip AttackSound;
+    public AudioClip DeathSound;
     public AudioSource StepAudioSource;
     public AudioSource VoiceAudioSource;
     public float speed = 1.0f;
@@ -21,10 +23,15 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (!isAlive)
+        {
+            return;
+        }
         HandleMovement();
         if (Input.GetButton("Fire1"))
         {
             animator.SetTrigger("Attack");
+            VoiceAudioSource.PlayOneShot(AttackSound);
         }
     }
 
@@ -81,5 +88,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         isAlive = false;
         animator.SetTrigger("Die");
+        VoiceAudioSource.PlayOneShot(DeathSound);
+        StopAllCoroutines();
     }
 }

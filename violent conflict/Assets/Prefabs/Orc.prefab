@@ -373,6 +373,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StepSound: {fileID: 8300000, guid: 20892e209dcdb194aac1c8fdce36444c, type: 3}
+  HitSound: {fileID: 8300000, guid: 2a1e95d5f5608f74c90f9e153c32df21, type: 3}
+  ChaseSound: {fileID: 0}
   StepAudioSource: {fileID: 82563900084045652}
   VoiceAudioSource: {fileID: 82653341832061846}
   speed: 0.05

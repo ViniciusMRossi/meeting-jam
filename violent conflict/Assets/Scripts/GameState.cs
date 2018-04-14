@@ -22,32 +22,32 @@
         }
     }
 
-    public void setCurrentSelectedCharacter(int character)
+    public void SetCurrentSelectedCharacter(int character)
     {
         currentSelectedCharacter = character;
     }
 
-    public int getCurrentSelectedCharacter()
+    public int GetCurrentSelectedCharacter()
     {
         return currentSelectedCharacter;
     }
 
-    public bool isCharacterDead(int index)
+    public bool IsCharacterDead(int index)
     {
         return deadCharacters[index];
     }
 
-    public void setCharacterDead(int index)
+    public void SetCharacterDead(int index)
     {
         deadCharacters[index] = true;
     }
 
-    public int getCurrentPoints()
+    public int GetCurrentPoints()
     {
         return currentPoints;
     }
 
-    public void addPoints(int points)
+    public void AddPoints(int points)
     {
         currentPoints += points;
     }

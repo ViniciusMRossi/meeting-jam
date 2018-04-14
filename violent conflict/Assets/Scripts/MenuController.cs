@@ -5,64 +5,82 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour {
 
-    public SpriteRenderer[] characters;  
+    public SpriteRenderer[] charactersSpriteRenderer;
+    public Animator[] charactersAnimator;
     public Color selectedColor;
     public Color unselectedColor;
     public Color deadColor;
 
-    private int currentCharacter;
+    private int currentCharacter = 0;
     private GameState gameState;
 
-    void Start () {
+    void Start ()
+    { 
         gameState = GameState.Instance;
-        for(int i = 0; i < characters.Length; i++)
+
+        if (gameState.IsCharacterDead(currentCharacter))
         {
-            if (gameState.isCharacterDead(i))
+            SetCharIndex(1);
+        }
+
+        SelectCurrentCharacter();
+
+        for(int i = 0; i < charactersSpriteRenderer.Length; i++)
+        {
+            if (gameState.IsCharacterDead(i))
             {
-                characters[i].color = deadColor;
+                charactersSpriteRenderer[i].color = deadColor;
+                charactersAnimator[i].SetBool("Death", true);
             }
         }
 	}
 	
-	void Update () {
+	void Update ()
+    {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            characters[currentCharacter].color = unselectedColor;
-            setNextCharIndex();
-            characters[currentCharacter].color = selectedColor;
+            SetCharProperties(1);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            characters[currentCharacter].color = unselectedColor;
-            setPrevCharIndex();
-            characters[currentCharacter].color = selectedColor;
+            SetCharProperties(-1);
         }
         else if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            gameState.setCurrentSelectedCharacter(currentCharacter);
+            gameState.SetCurrentSelectedCharacter(currentCharacter);
             SceneManager.LoadSceneAsync("Level1");
         }
     }
 
-    void setNextCharIndex()
+    void SetCharProperties(int addNumber)
     {
-        if (currentCharacter >= 2)
+        UnselectCurrentCharacter();
+        SetCharIndex(addNumber);
+        SelectCurrentCharacter();        
+    }
+
+    void SelectCurrentCharacter()
+    {
+        charactersSpriteRenderer[currentCharacter].color = selectedColor;
+        charactersAnimator[currentCharacter].GetComponent<Animator>().SetBool("WalkDown", true);
+    }
+
+    void UnselectCurrentCharacter()
+    {
+        charactersSpriteRenderer[currentCharacter].color = unselectedColor;
+        charactersAnimator[currentCharacter].SetBool("SelectionOff", true);
+    }
+
+    void SetCharIndex(int addNumber)
+    {
+        currentCharacter += addNumber;
+
+        if (currentCharacter >= charactersAnimator.Length)
             currentCharacter = 0;
-        else
-            ++currentCharacter;
+        else if (currentCharacter < 0)
+            currentCharacter = charactersAnimator.Length - 1;
 
-        if (gameState.isCharacterDead(currentCharacter))
-            setNextCharIndex();
-    }
-
-    void setPrevCharIndex()
-    {
-        if (currentCharacter <= 0)
-            currentCharacter = 2;
-        else
-            --currentCharacter;
-
-        if (gameState.isCharacterDead(currentCharacter))
-            setPrevCharIndex();
-    }
+        if(gameState.IsCharacterDead(currentCharacter))
+            SetCharIndex(addNumber);
+    }    
 }
