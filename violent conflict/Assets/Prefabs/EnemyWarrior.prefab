@@ -37,11 +37,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4605323105980194}
   - component: {fileID: 50244127691248370}
-  - component: {fileID: 114108931632899248}
   - component: {fileID: 58197556969762486}
+  - component: {fileID: 114901807712555918}
+  - component: {fileID: 58525531684998070}
   m_Layer: 0
-  m_Name: Warrior
-  m_TagString: Player
+  m_Name: EnemyWarrior
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,6 +351,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.15}
   serializedVersion: 2
   m_Radius: 0.15
+--- !u!58 &58525531684998070
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1130969262903314}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.31
 --- !u!61 &61437504033787104
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -359,7 +375,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.022121217, y: -0.055797637}
@@ -384,7 +400,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.028441593, y: -0.0453356}
@@ -409,7 +425,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000000029802322, y: 0.01931782}
@@ -434,7 +450,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000000029802322, y: -0.12556559}
@@ -627,7 +643,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114108931632899248
+--- !u!114 &114901807712555918
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -635,17 +651,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1130969262903314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eacb534159f1aa44cb5c8221893d2f05, type: 3}
+  m_Script: {fileID: 11500000, guid: 07de2bd1b8a17c04a8d02f2d4210278b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StepSound: {fileID: 8300000, guid: 7f55439e494cde444b227805422c9519, type: 3}
-  AttackSound: {fileID: 8300000, guid: 2a1e95d5f5608f74c90f9e153c32df21, type: 3}
-  DeathSound: {fileID: 8300000, guid: 7547576145ad7dd45a29b54d3ef46bd6, type: 3}
-  StepAudioSource: {fileID: 82854734160977544}
-  VoiceAudioSource: {fileID: 82927849969320420}
+  StepSound: {fileID: 8300000, guid: 20892e209dcdb194aac1c8fdce36444c, type: 3}
+  HitSound: {fileID: 8300000, guid: 2a1e95d5f5608f74c90f9e153c32df21, type: 3}
+  ChaseSound: {fileID: 8300000, guid: 4e3c5cd8651a5b142b864143278ba991, type: 3}
+  StepAudioSource: {fileID: 82563900084045652, guid: 8d7a961c28f1f4bd28e835711951be0e,
+    type: 2}
+  VoiceAudioSource: {fileID: 82653341832061846, guid: 8d7a961c28f1f4bd28e835711951be0e,
+    type: 2}
   speed: 0.05
-  animator: {fileID: 95085144801185186}
-  charType: 0
+  animator: {fileID: 95607236787445588, guid: 8d7a961c28f1f4bd28e835711951be0e, type: 2}
   isAlive: 1
 --- !u!212 &212122376338214998
 SpriteRenderer:
@@ -858,7 +875,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300156, guid: b89e4fb721709461db9491df5c0b6df9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9098039, g: 0.4745098, b: 0.4745098, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

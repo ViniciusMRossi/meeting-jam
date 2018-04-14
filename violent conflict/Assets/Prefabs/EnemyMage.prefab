@@ -142,12 +142,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4097031314440156}
   - component: {fileID: 50709951992006480}
-  - component: {fileID: 114003925291543248}
   - component: {fileID: 58404897630016072}
   - component: {fileID: 212519021374690504}
+  - component: {fileID: 114666785697993894}
+  - component: {fileID: 58038548537632526}
   m_Layer: 0
-  m_Name: Mage
-  m_TagString: Player
+  m_Name: EnemyMage
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,6 +440,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58038548537632526
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1489576249382938}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.31
 --- !u!58 &58404897630016072
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -463,7 +479,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -488,7 +504,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -513,7 +529,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -538,7 +554,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -563,7 +579,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -588,7 +604,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -613,7 +629,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -638,7 +654,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.023922846, y: -0.017087817}
@@ -967,7 +983,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114003925291543248
+--- !u!114 &114666785697993894
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -975,17 +991,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1489576249382938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eacb534159f1aa44cb5c8221893d2f05, type: 3}
+  m_Script: {fileID: 11500000, guid: 07de2bd1b8a17c04a8d02f2d4210278b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StepSound: {fileID: 8300000, guid: 7f55439e494cde444b227805422c9519, type: 3}
-  AttackSound: {fileID: 0}
-  DeathSound: {fileID: 8300000, guid: 7547576145ad7dd45a29b54d3ef46bd6, type: 3}
-  StepAudioSource: {fileID: 82106998179368952}
-  VoiceAudioSource: {fileID: 82358923005975822}
+  StepSound: {fileID: 8300000, guid: 20892e209dcdb194aac1c8fdce36444c, type: 3}
+  HitSound: {fileID: 8300000, guid: 2a1e95d5f5608f74c90f9e153c32df21, type: 3}
+  ChaseSound: {fileID: 8300000, guid: 4e3c5cd8651a5b142b864143278ba991, type: 3}
+  StepAudioSource: {fileID: 82563900084045652, guid: 8d7a961c28f1f4bd28e835711951be0e,
+    type: 2}
+  VoiceAudioSource: {fileID: 82653341832061846, guid: 8d7a961c28f1f4bd28e835711951be0e,
+    type: 2}
   speed: 0.05
-  animator: {fileID: 95873942702718548}
-  charType: 1
+  animator: {fileID: 95607236787445588, guid: 8d7a961c28f1f4bd28e835711951be0e, type: 2}
   isAlive: 1
 --- !u!212 &212148213347125398
 SpriteRenderer:
@@ -1418,7 +1435,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300156, guid: eefacd33d28b94eed94f262374b775d0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9117647, g: 0.4759948, b: 0.4759948, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

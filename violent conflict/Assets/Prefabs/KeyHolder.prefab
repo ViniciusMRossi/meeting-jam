@@ -363,6 +363,7 @@ MonoBehaviour:
   VoiceAudioSource: {fileID: 82350876492943252}
   speed: 0.05
   animator: {fileID: 95619817513408898}
+  charType: 2
   isAlive: 1
 --- !u!212 &212962230106137182
 SpriteRenderer:

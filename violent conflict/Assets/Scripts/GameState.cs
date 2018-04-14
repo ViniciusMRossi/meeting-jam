@@ -4,6 +4,7 @@
     private bool[] deadCharacters = { false, false, false, true };
     private int currentPoints;      
     private int currentSelectedCharacter;
+    public int currentLevel = 1;
 
     private GameState()
     {
@@ -50,5 +51,10 @@
     public void AddPoints(int points)
     {
         currentPoints += points;
+    }
+
+    public void ResetGameState()
+    {
+        instance = null;
     }
 }
