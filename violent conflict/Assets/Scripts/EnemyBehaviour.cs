@@ -2,7 +2,6 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 public class EnemyBehaviour : MonoBehaviour
 {
     public AudioClip StepSound;
