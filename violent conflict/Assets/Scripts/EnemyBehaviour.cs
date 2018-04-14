@@ -28,6 +28,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            animator = GetComponentInChildren<Animator>();
             StartCoroutine(FollowPlayer(other.transform));
             StartCoroutine(PlayStepSounds());
             VoiceAudioSource.PlayOneShot(ChaseSound);
