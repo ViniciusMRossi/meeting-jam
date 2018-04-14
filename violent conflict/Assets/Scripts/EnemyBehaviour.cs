@@ -31,6 +31,8 @@ public class EnemyBehaviour : MonoBehaviour
 		foreach (var colider in coliders) {
 			colider.enabled = false;
 		}
+
+        GameState.Instance.OnViolenceOcurred();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
