@@ -21,6 +21,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void Die()
     {
+		if (!isAlive)
+			return;
+		
 		Debug.Log ("Die mothafucka");
         isAlive = false;
 		animator.SetBool("Die", true);
@@ -37,6 +40,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+		if (!isAlive)
+			return;
+		
         if (other.tag == "Player")
         {
             animator = GetComponentInChildren<Animator>();
@@ -49,6 +55,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
+		if (!isAlive)
+			return;
+		
         if (coll.gameObject.tag == "Player")
         {
             coll.gameObject.GetComponentInChildren<PlayerBehaviour>().Die();
@@ -105,6 +114,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     internal void OnPlayerDead()
     {
+		if (!isAlive)
+			return;
+		
         StopAllCoroutines();
     }
 }
