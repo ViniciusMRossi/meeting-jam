@@ -56,7 +56,7 @@ public class MenuController : MonoBehaviour {
     {
         UnselectCurrentCharacter();
         SetCharIndex(addNumber);
-        UnselectCurrentCharacter();        
+        SelectCurrentCharacter();        
     }
 
     void SelectCurrentCharacter()
