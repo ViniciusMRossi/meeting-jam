@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour {
 		if(Vector3.Distance(currentCharacter.transform.position, winPoint.position) < 1f)
         {
             gameState.currentLevel = currentLevel + 1;
-            SceneManager.LoadSceneAsync("PlayerSelect");
+            SceneManager.LoadSceneAsync("Congratulations");
         }
 	}
 }
