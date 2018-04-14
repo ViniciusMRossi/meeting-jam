@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour {
@@ -8,8 +6,13 @@ public class LevelController : MonoBehaviour {
     public GameObject[] characters;
     public GameObject[] enemyPrefabs;
     public Transform[] enemySpawnPoints;
+    public Transform deadWarriorSpawnPoint;
+    public Transform deadMageSpawnPoint;
     public Transform spawnPoint;
     public Transform winPoint;
+    public GameObject deadWarrior;
+    public GameObject deadMage;
+
     public int currentLevel;
 
     private GameState gameState;
@@ -24,7 +27,15 @@ public class LevelController : MonoBehaviour {
             int enemyIndex = Random.Range(0, enemyPrefabs.Length);
             Instantiate(enemyPrefabs[enemyIndex], enemySpawnPoints[i].position, Quaternion.identity);
         }
-	}
+        if (gameState.IsCharacterDead(0)) // warrior
+        {
+            Instantiate(deadWarrior, deadWarriorSpawnPoint.position, Quaternion.identity);
+        }
+        if (gameState.IsCharacterDead(1)) // mage
+        {
+            Instantiate(deadMage, deadMageSpawnPoint.position, Quaternion.identity);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

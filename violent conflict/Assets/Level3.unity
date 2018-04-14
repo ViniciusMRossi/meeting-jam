@@ -435,6 +435,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f00f51eb0251745be1df5ec9d553fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1034228451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1034228452}
+  m_Layer: 0
+  m_Name: deadwarrior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1034228452
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1034228451}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.8, y: 7.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1498322277}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1098486378
 GameObject:
   m_ObjectHideFlags: 0
@@ -28252,6 +28280,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1384881871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1384881872}
+  m_Layer: 0
+  m_Name: deadmage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1384881872
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1384881871}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6, y: 11.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1498322277}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1498322276
 GameObject:
   m_ObjectHideFlags: 0
@@ -28284,6 +28340,8 @@ Transform:
   - {fileID: 790299165}
   - {fileID: 1815252340}
   - {fileID: 70524489}
+  - {fileID: 1034228452}
+  - {fileID: 1384881872}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28449,8 +28507,13 @@ MonoBehaviour:
   - {fileID: 790299165}
   - {fileID: 1815252340}
   - {fileID: 70524489}
+  deadWarriorSpawnPoint: {fileID: 1034228452}
+  deadMageSpawnPoint: {fileID: 1384881872}
   spawnPoint: {fileID: 1258501976}
   winPoint: {fileID: 318128412}
+  deadWarrior: {fileID: 1130969262903314, guid: 3af55b86e12ef4740a2acd1b3dfb98fd,
+    type: 2}
+  deadMage: {fileID: 1489576249382938, guid: c3cc7bf28f302f04b884d00c6a165c14, type: 2}
   currentLevel: 3
 --- !u!4 &1883100914
 Transform:
