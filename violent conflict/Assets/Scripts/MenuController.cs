@@ -52,7 +52,7 @@ public class MenuController : MonoBehaviour {
         else if(Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             gameState.SetCurrentSelectedCharacter(currentCharacter);
-            SceneManager.LoadSceneAsync("Level1");
+            SceneManager.LoadSceneAsync("Level" + gameState.currentLevel);
         }
     }
 
