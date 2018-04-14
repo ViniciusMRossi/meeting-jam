@@ -259,7 +259,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -364,6 +364,9 @@ MonoBehaviour:
   speed: 0.05
   animator: {fileID: 95619817513408898}
   charType: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
   isAlive: 1
 --- !u!212 &212962230106137182
 SpriteRenderer:

@@ -50,7 +50,7 @@ public class LevelController : MonoBehaviour {
 				if (currentCharacter.GetComponent<PlayerBehaviour>().charType == 2) {
 					SceneManager.LoadSceneAsync ("Finish");
 				} else {
-					SceneManager.LoadSceneAsync("GameOverEx");
+					SceneManager.LoadSceneAsync("GameOver");
 				}
                 
             }
