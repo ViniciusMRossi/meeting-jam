@@ -1,4 +1,6 @@
-﻿public class GameState {
+﻿using System;
+
+public class GameState {
 
     private static GameState instance;
     private bool[] deadCharacters = { false, false, false, true };
@@ -36,6 +38,11 @@
     public bool IsCharacterDead(int index)
     {
         return deadCharacters[index];
+    }
+
+    internal void OnViolenceOcurred()
+    {
+        SetCharacterDead(currentSelectedCharacter);
     }
 
     public void SetCharacterDead(int index)
