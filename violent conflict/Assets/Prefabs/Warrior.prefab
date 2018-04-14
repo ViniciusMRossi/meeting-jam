@@ -393,11 +393,6 @@ MonoBehaviour:
   speed: 0.05
   animator: {fileID: 95085144801185186}
   charType: 0
-  attackPosition: {fileID: 4839736596972980}
-  objectsHit: []
-  selectObjectsToHit:
-    serializedVersion: 2
-    m_Bits: 256
   isAlive: 1
 --- !u!212 &212965398734214786
 SpriteRenderer:
